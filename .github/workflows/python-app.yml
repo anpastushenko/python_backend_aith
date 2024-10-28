@@ -24,5 +24,7 @@ jobs:
         uses: abatilo/actions-poetry@v2
       - name: Install dependencies with poetry
         run: poetry install
+      - name: Run tests hw2
+        run: poetry run pytest -vv hw2/test.py
       - name: Run tests
         run: poetry run pytest -vv --cov=hw3/demo_service/ tests/test_coverage.py 
