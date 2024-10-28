@@ -107,7 +107,6 @@ def patch_item(id: int, item_data: ItemPatch):
             status_code=HTTPStatus.NOT_MODIFIED, detail="Item not found"
         )
     item = items[id]
-
     updated_item = item.model_copy(update=item_data.model_dump())
     items[id] = updated_item
     return updated_item
